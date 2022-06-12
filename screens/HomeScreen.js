@@ -19,7 +19,6 @@ const HomeScreen = () => {
     return (
         <>
             <Tabs.Navigator
-                // default configuration from React Navigation
                 tabBarOptions={{
                     activeTintColor: "#F2A52B",
                     inactiveTintColor: "#F2A52B",

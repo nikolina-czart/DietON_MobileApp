@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigation } from '@react-navigation/core'
 import { Popover, Button, Box, Center, NativeBaseProvider } from "native-base";
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
 import { db, auth, onAuthStateChanged, doc, getDoc } from '../../configs/firebase'
 
 const UserPopover = () => {
     const [user, setUser] = useState({})
+    const navigation = useNavigation()
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -37,7 +39,7 @@ const UserPopover = () => {
         <Box style={styles.box}>
             <Popover placement="left top" trigger={triggerProps => {
                 return <Button {...triggerProps} style={styles.circle}>
-                    D
+                    {/* {user.name.charAt(0)} */}
                 </Button>;
             }}>
                 <Popover.Content accessibilityLabel="Delete Customerd" w="56">
