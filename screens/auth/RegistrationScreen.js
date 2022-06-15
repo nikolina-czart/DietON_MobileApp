@@ -30,7 +30,6 @@ const RegistrationScreen = () => {
                 name: name,
                 email: email
             });
-            console.log("Document written with ID: ", uid);
             showToast("success", "top", "Success!", "Super! You have registered correctly! :)")
         } catch (error) {
             const errorCode = error.code;

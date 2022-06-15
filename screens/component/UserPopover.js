@@ -15,6 +15,7 @@ const UserPopover = () => {
                 getDoc(doc(db, "users", uid)).then(docSnap => {
                     if (docSnap.exists()) {
                         setUser(docSnap.data())
+                        console.log(user.name)
                     } else {
                         console.log("No such document!");
                     }
@@ -39,7 +40,7 @@ const UserPopover = () => {
         <Box style={styles.box}>
             <Popover placement="left top" trigger={triggerProps => {
                 return <Button {...triggerProps} style={styles.circle}>
-                    {/* {user.name.charAt(0)} */}
+                    {/* {user && user.name.charAt(0)} */}
                 </Button>;
             }}>
                 <Popover.Content accessibilityLabel="Delete Customerd" w="56">

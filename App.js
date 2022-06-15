@@ -13,6 +13,10 @@ import Toast from 'react-native-toast-message'
 import toastConfig from "./configs/toastConfig"
 import TestScreen from './screens/TestScreen';
 import UserPopover from './screens/component/UserPopover';
+import AddMeal from './screens/navscreens/AddMeal';
+import AddIngredient from './screens/navscreens/AddIngredient';
+import PlanMeal from './screens/navscreens/PlanMeal';
+import AddElement from './screens/navscreens/AddElement';
 
 const Stack = createStackNavigator();
 
@@ -54,6 +58,62 @@ export default function App() {
           />
           <Stack.Screen options={{ headerShown: false }} name="Registration" component={RegistrationScreen} />
           <Stack.Screen options={{ headerShown: false }} name="Parameters" component={ParameterScreen} />
+          <Stack.Screen
+            name="AddMeal"
+            component={AddMeal}
+            options={{
+              // headerTitle: props => <LogoTitle {...props} />,
+              headerRight: () => (
+                <NativeBaseProvider>
+                  <Center flex={1} px="3">
+                    <UserPopover />
+                  </Center>
+                </NativeBaseProvider>
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="AddIngredient"
+            component={AddIngredient}
+            options={{
+              // headerTitle: props => <LogoTitle {...props} />,
+              headerRight: () => (
+                <NativeBaseProvider>
+                  <Center flex={1} px="3">
+                    <UserPopover />
+                  </Center>
+                </NativeBaseProvider>
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="Plan meal"
+            component={PlanMeal}
+            options={{
+              // headerTitle: props => <LogoTitle {...props} />,
+              headerRight: () => (
+                <NativeBaseProvider>
+                  <Center flex={1} px="3">
+                    <UserPopover />
+                  </Center>
+                </NativeBaseProvider>
+              ),
+            }}
+          />
+          <Stack.Screen
+            name="Add element"
+            component={AddElement}
+            options={{
+              // headerTitle: props => <LogoTitle {...props} />,
+              headerRight: () => (
+                <NativeBaseProvider>
+                  <Center flex={1} px="3">
+                    <UserPopover />
+                  </Center>
+                </NativeBaseProvider>
+              ),
+            }}
+          />
         </Stack.Navigator>
         <Toast config={toastConfig} />
 

@@ -111,13 +111,9 @@ const ParameterScreen = () => {
             calorie: calorie
         }
 
-        console.log(date);
-        console.log(parameter);
-
         try {
             const docRef = doc(db, "users", uid, "parameters", date);
             setDoc(docRef, parameter);
-            console.log("Document written with ID: ", docRef.id);
         } catch (e) {
             console.error("Error adding document: ", e);
         }
@@ -139,7 +135,6 @@ const ParameterScreen = () => {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 addParameterUser(user.uid)
-                console.log("Add to: ", user.uid, " parameters diet")
             } else {
                 console.log("User is signed out")
             }

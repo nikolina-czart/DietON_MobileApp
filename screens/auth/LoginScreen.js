@@ -29,7 +29,6 @@ const LoginScreen = () => {
                 .then((userCredential) => {
                     const user = userCredential.user;
                     showToast("success", "top", "Success!", "Welcome back! Correct login!")
-                    console.log("Singed in user: ", user);
                 })
                 .catch((error) => {
                     showToast("error", "top", "Error!", getErrorMessage(error.code))

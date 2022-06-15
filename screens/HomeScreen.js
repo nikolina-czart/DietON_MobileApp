@@ -7,7 +7,7 @@ import CalendarScreen from './navscreens/CalendarScreen';
 import MealScreen from './navscreens/MealScreen';
 import IngredientScreen from './navscreens/IngredientScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import { getAuth } from "firebase/auth";
 
 const Tabs = AnimatedTabBarNavigator();
 

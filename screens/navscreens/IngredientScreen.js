@@ -8,6 +8,7 @@ import { collection, query, where, getDocs, orderBy, limit, startAfter } from "f
 import { db } from "../../configs/firebase";
 import { async } from '@firebase/util';
 import Ingredient from "./Ingredient"
+import FloatingButton from '../component/FloatingButton';
 
 const Tabs = AnimatedTabBarNavigator();
 
@@ -43,14 +44,20 @@ const IngredientScreen = () => {
 
 
     return (
+        <>
 
-        <ScrollView
-            contentContainerStyle={styles.scrollView}
-        >
-            {ingredients.map(ingredient => (
-                <Ingredient key={ingredient.id} ingredient={ingredient} />
-            ))}
-        </ScrollView>
+            <ScrollView
+                contentContainerStyle={styles.scrollView}
+            >
+
+                {ingredients.map(ingredient => (
+                    <Ingredient key={ingredient.id} ingredient={ingredient} />
+                ))}
+
+            </ScrollView>
+            <FloatingButton />
+        </>
+
     )
 }
 

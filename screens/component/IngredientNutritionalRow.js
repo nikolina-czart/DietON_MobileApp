@@ -5,7 +5,6 @@ import { db, auth, onAuthStateChanged, doc, getDoc } from '../../configs/firebas
 import * as Progress from 'react-native-progress';
 
 const IngredientNutririonalRow = ({ name, value, unit }) => {
-    console.log(value)
     return (
         <>
             <View style={styles.box}>
